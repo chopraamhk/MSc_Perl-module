@@ -1,0 +1,16 @@
+open(FH,"*.pdb");  //enter four letter code 
+open (OUT,">Output.txt");
+@file=<FH>;
+foreach $a(@file)
+{ if($a=~/^HELIX/m) 
+{ print OUT "$a";}
+if($a=~/^SHEET/m) 
+{ print OUT "$a";}
+if($a=~/^ATOM/)
+{ print OUT "$a";}
+if($a=~/HETATM\s\d/m)
+{ print OUT "$a";}
+
+}
+
+print "done"; close FH; close OUT;
