@@ -1,0 +1,34 @@
+#!usr/bin/perl
+$DNA="AGGGCCTCAAATGCATCGGCATGCA";
+print"DNA:$DNA\n"; 
+#reverse
+$revcom=reverse $DNA; 
+print"Rerverse sequence:$revcom\n"; 
+#reverse complement
+$revcom=~tr/ACGT/TGCA/;
+print"Reverse complement of $DNA is $revcom\n";
+$len=length $DNA;
+print "Length: $len\n";
+$count_A=0 ; $count_T=0; $count_G=0; $count_C=0; 
+@DNA=split("",$DNA);
+for($i=0;$i<+$len;$i++)
+{
+if (@DNA[$i] eq 'A')
+{ $count_A++;}
+if (@DNA[$i] eq 'T')
+{ $count_T++;}
+if (@DNA[$i] eq 'G')
+{ $count_G++;}
+if (@DNA[$i] eq 'C')
+{ $count_C++;}
+}
+print"Adenine:$count_A\n"; 
+print"Guanine:$count_G\n";
+print"Cytosine:$count_C\n"; 
+print"Thymine:$count_T\n";
+$AH=2*$count_A;
+$TH=2*$count_T;
+$GH=3*$count_G;
+$CH=3*$count_C;
+$H=$AH+$TH+$GH+$CH;
+print "Total hydrogen bonds=$H\n"
