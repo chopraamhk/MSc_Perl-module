@@ -1,0 +1,81 @@
+#!usr/bin/perl
+
+print"Enter the filename: ";
+
+$fname=<STDIN>; 
+open(DATA,"<$fname"); 
+open(OUT,">output.txt"); 
+@s=<DATA>;
+close DATA;
+$seq=join('',@s);
+
+@final=split('>',$seq); 
+@length=""; 
+@polar=""; 
+@seq1="";
+for($i=1;$i<2;$i=$i+1)
+{
+$sq1=$final[$i];
+}
+@seq1=split("\n",$sq1); 
+push(@header,shift @seq1); 
+print @seq1; 
+$s1=join('',@seq1); 
+push(@length,$len1=length($s1)); 
+push(@polar,$count=($s1=~tr/QNHSTYC//));
+
+for($i=2;$i<3;$i=$i+1)
+{
+$sq2=$final[$i];
+}
+@seq2=split("\n",$sq2); 
+push(@header,shift @seq2); 
+print @seq2;
+$s2=join('',@seq2); 
+push(@length,$len1=length($s2)); 
+push(@polar,$count=($s2=~tr/QNHSTYC//));
+
+
+for($i=3;$i<4;$i=$i+1)
+{
+$sq3=$final[$i];
+}
+@seq3=split("\n",$sq3); 
+push(@header,shift @seq3); 
+print @seq3;
+$s3=join('',@seq3); 
+push(@length,$len1=length($s3));
+push(@polar,$count=($s3=~tr/QNHSTYC//));
+
+for($i=4;$i<5;$i=$i+1)
+{
+$sq4=$final[$i];
+}
+@seq4=split("\n",$sq4); 
+push(@header,shift @seq4); 
+print @seq4;
+$s4=join('',@seq4); 
+push(@length,$len1=length($s4)); 
+push(@polar,$count=($s4=~tr/QNHSTYC//));
+
+
+for($i=5;$i<6;$i=$i+1)
+{
+$sq5=$final[$i];
+}
+@seq5=split("\n",$sq5); 
+shift @seq5;
+print @seq5;
+$s5=join('',@seq5); 
+push(@length,$len1=length($s5)); 
+push(@polar,$count=($s5=~tr/QNHSTYC//));
+ 
+print "\n\n Length is @length,\n Polar count is @polar\n";
+
+for($j=1;$j<6;$j=$j+1)
+{
+%final_hash=($polar[$j]=>$length[$j]); 
+print($final_hash{$polar[$j]}); print"\n\n";
+}
+print"@header"; close OUT;
+exit;
