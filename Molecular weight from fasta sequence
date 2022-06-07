@@ -1,0 +1,34 @@
+#!/usr/bin/perl
+#calculate molecular weight from a fasta file #taking the sequence from the file
+print "Enter the protein sequence file name: ";
+$fname = <STDIN>; open(PROTEIN,$fname); @file = <PROTEIN>; close PROTEIN;
+shift (@file); foreach(@file)
+{chomp $_;}
+$seq = join ('',@file); @arr = split ('', $seq);
+#calculating the molecular weight
+$molwt = 0; foreach(@arr)
+{
+if(/A/)
+{$molwt += 89.1;} elsif(/R/)
+{$molwt += 174.2;} elsif(/N/)
+{$molwt += 132.1;} elsif(/D/)
+{$molwt += 133.1;} elsif(/C/)
+{$molwt += 121.2;} elsif(/E/)
+{$molwt += 147.1;} elsif(/Q/)
+ 
+{$molwt += 146.2;} elsif(/G/)
+{$molwt += 75.1;} elsif(/H/)
+{$molwt += 155.2;} elsif(/I/)
+{$molwt += 131.2;} elsif(/L/)
+{$molwt += 131.2;} elsif(/K/)
+{$molwt += 146.2;} elsif(/M/)
+{$molwt += 149.2;} elsif(/F/)
+{$molwt += 165.2;} elsif(/P/)
+{$molwt += 115.1;} elsif(/S/)
+{$molwt += 105.1;} elsif(/T/)
+{$molwt += 119.1;} elsif(/W/)
+{$molwt += 204.2;} elsif(/Y/)
+{$molwt += 181.2;} elsif(/V/)
+{$molwt += 117.1;}
+}
+print "The molecular weight of the sequence is: $molwt Daltons\n"; exit;
