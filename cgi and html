@@ -1,0 +1,57 @@
+CGI SCRIPT
+#!"D:\xampp\perl\bin\perl.exe"
+ use CGI qw(:standard);
+print header;
+
+$firstname=param("fname");
+
+$lastname=param("lname");
+
+$fathername=param("aname");
+
+$Address=param("address");
+
+$DOB=param("dob");
+
+$Age=param("age");
+
+$Gender=param("gender");
+
+$state=param("state");
+
+$City=param("city");
+
+$phn=param("phno");
+
+print "First Name:$firstname <br>";
+print "Last Name:$lastname <br>";
+print "Father Name:$fathername <br>"; 
+print "Address:$Address <br>";
+print "Date of Birth:$DOB <br>";
+print "Age:$Age <br>";
+print "Gender:$Gender <br>"; 
+print "State:$state <br>";
+print "City:$City <br>"; 
+print "phone No:$phn <br>";
+
+
+HTML SCRIPT
+
+<html><head><title>Bio data</title></head>
+<body>
+<form action="http://localhost/cgi-bin/biodata.pl" method="POST">
+<h1> BIO-DATA </h1>
+First Name:<input type="text" name="fname">
+Last Name:<input type="text" name="lname"><br><br>
+ Father Name:<input type="text" name="aname"><br><br> 
+Address:<input type="text" name="address"><br><br> 
+DOB:<input type="text" name="dob"><br><br>
+ Age:<input type="text" name="age"><br><br>
+Gender:<input type="radio" name=gender value=male>Male
+<input type="radio" name=gender value=female>Female<br><br> 
+State:<input type="text" name="state"><br><br>
+City:<input type="text" name="city"><br><br>
+Ph No:<input type="text" name="phno"><br><br>
+<input type="submit">
+</body>
+</html>
