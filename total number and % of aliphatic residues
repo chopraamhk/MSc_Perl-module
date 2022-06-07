@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+
+$protein= "MASGCKIGPSILNSDLANLGAECLRMLDSGADYLHLDVMDGHFVPNITFGHPVVESLRKQ 
+LGQDPFFDMHMMVSKPEQWVKPMAVAGANQYTFHLEATENPGALIKDIRENGMKVGLAIK
+PGTSVEYLAPWANQIDMALVMTVEPGFGGQKFMEDMMPKVHWLRTQFPSLDIEVDGGVGP 
+DTVHKCAEAGANMIVSGSAIMRSEDPRSVINLLRNVCSEAAQKRSLDR";
+
+print "The protein sequence (UNIPROT ID: Q96AT9)is\n$protein\n"; #length
+$len=length $protein; print "Length: $len\n";
+$count_V=0;
+$count_I=0;
+$count_L=0;
+$count_A=0;
+$count_G=0;
+$count_M=0;
+$count_P=0; @protein=split("",$protein);
+
+for($i=0;$i<+$len;$i++)
+{
+if (@protein[$i] eq 'V')
+{ $count_V++; }
+if (@protein[$i] eq 'I')
+{ $count_I++; }
+if (@protein[$i] eq 'L')
+{ $count_L++; }
+if (@protein[$i] eq 'A')
+{ $count_A++; }
+if (@protein[$i] eq 'P')
+{ $count_P++; }
+ 
+if (@protein[$i] eq 'G')
+{ $count_G++; }
+if (@protein[$i] eq 'M')
+{ $count_M++ }
+}
+print"val:$count_V\n"; print"leu $count_L\n"; print"Ile:$count_I\n"; print"Ala:$count_A\n"; print"Pro:$count_P\n"; print"Gly:$count_G\n"; print"Met:$count_M\n";
+$ali=$count_V+$count_L+$count_I+$count_A+$count_M+$count_P+$count_G; print"Total number of aliphatic residues :$ali\n";
+$alip=$ali/$len*100;
+print "The percentage of aliphatic residues is $alip\n";
