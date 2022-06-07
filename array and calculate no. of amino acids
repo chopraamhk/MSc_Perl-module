@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+$fname=$ARGV[0]; open(FILE,$fname); @seq=<FILE>; close FILE;
+shift (@seq); foreach(@seq)
+{
+chomp $seq[$_];
+}
+$ar=join('',@seq);
+@ar=split('',$ar); print "$ar";
+$a=0;$t=0;
+$g=0;$c=0; foreach (@ar)
+{
+if ($_ eq'A')
+{ $a++;}
+if($_ eq'T')
+{ $t++;}
+if ($_ eq'G')
+{ $g++;}
+if($_ eq'C')
+{ $c++;}
+}
+print "A Count: $a\n"; print "T Count: $t\n"; print "G Count: $g\n"; print "C Count: $c\n";
