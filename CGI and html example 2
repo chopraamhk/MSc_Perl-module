@@ -1,0 +1,30 @@
+#!"C:\xampp\perl\bin\perl.exe"
+
+print "Content-type: text/html\n\n";
+use CGI qw(:standard);
+#print header;
+$dna = param("dna");
+$len = length ($dna);
+print " DNA sequence is $dna<br> ";
+print " DNA sequence length is $len<br> ";
+$rna = $dna;
+$rna =~ s/t/u/g;
+print "RNA sequence is $rna<br> ";
+
+HTML CODE:
+
+<html>
+<head>
+<title>CGI PRACTISE WEBSITE</title>
+</head>
+<style>body</style>
+<body bgcolor="green">
+<strong>
+<h1 align="center">WELCOME TO REVERSE COMPLEMETARY WORLD</h1>
+<form action="http://localhost/cgi-bin/rc.pl" method='post'>
+ENTER THE DNA SEQUENCE 
+<textarea name="dna" ></textarea>
+<input type="submit" value="Submit">
+<input type="reset">
+</form></body>
+</html>
