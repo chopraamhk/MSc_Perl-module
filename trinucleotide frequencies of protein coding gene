@@ -1,0 +1,103 @@
+#usr#!/bin/perl
+open (SEQ, "<seq.txt");
+ @dna =<SEQ>;
+print "seq:@dna\n" ;
+close SEQ;
+$dna= join("",@dna);
+@dna1=split("",$dna);
+$len= length $dna;
+print"length:$len\n";
+for($i=0; $i< $len-1;$i++)
+{
+ $di=@dna1[$i].@dna1[$i+1].@dna1[$i+2];
+   if ($di eq 'TTT')
+    {
+      $aa= $aa+1;
+     }
+	 if ($di eq 'TTA')
+    {
+      $ab= $ab+1;
+     }
+    if ($di eq 'CTT')
+    {
+      $ac= $ac+1; 
+     }
+	 if ($di eq 'ATT')
+    {
+      $ad= $ad+1; 
+     }
+     if ( $di eq 'ATG')
+    {
+      $ae= $ae+1;
+     }
+    if ( $di eq 'GTT')
+    {
+      $af= $af+1;
+     }
+	 if ($di eq 'TCC')
+    {
+      $ag= $ag+1;
+     }
+	 if ($di eq 'CCC')
+    {
+      $ah= $ah+1;
+     }
+    if ($di eq 'ACT')
+    {
+      $ai= $ai+1; 
+     }
+	 if ($di eq 'GCA')
+    {
+      $aj= $aj+1; 
+     }
+     if ( $di eq 'TAT')
+    {
+      $ak= $ak+1;
+     }
+    if ( $di eq 'TAA')
+    {
+      $al= $al+1;
+     }
+	 if ($di eq 'CAT')
+    {
+      $am= $am+1;
+     }
+	 if ($di eq 'CAG')
+    {
+      $an= $an+1;
+     }
+    if ($di eq 'AAT')
+    {
+      $ao= $ao+1; 
+     }
+	 if ($di eq 'AAA')
+    {
+      $ap= $ap+1; 
+     }
+     if ( $di eq 'GAT')
+    {
+      $aq= $aq+1;
+     }
+    if ( $di eq 'GAG')
+    {
+      $ar= $ar+1;
+     }
+	 }   
+print "TTT Count is: $aa\n";
+print "TTA Count is: $ab\n";
+print "CTT Count is: $ac\n";
+print "ATT Count is: $ad\n";
+print "ATG Count is: $ae\n";
+print "GTT Count is: $af\n";
+print "TCC Count is: $ag\n";
+print "GCC Count is: $ah\n";
+print "ACT Count is: $ai\n";
+print "GCA Count is: $aj\n";
+print "TAT Count is: $ak\n";
+print "TAA Count is: $al\n";
+print "CAT Count is: $am\n";
+print "CAG Count is: $an\n";
+print "AAT Count is: $ao\n";
+print "AAA Count is: $ap\n";
+print "GAT Count is: $aq\n";
+print "GAG Count is: $ar\n";
