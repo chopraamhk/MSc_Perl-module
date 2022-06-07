@@ -1,0 +1,52 @@
+#!/usr/bin/perl
+$protein= "MGKIIGIDLGTTNSCVAVLDGDKPRVIENAEGERTTASVIAYTDGETLVGQPAKRQAVTNPTNTLFAIKR
+LIGRRFEDEEVQRDIEIMPYKIVKADNGDAWVEAKGQKMAAPQVSAEVLKKMKKTAEDFLGEEVTGAVIT
+VPAYFNDAQRQATKDAGRIAGLEVKRIINEPTAAALAYGLDKKGGDRTIAVYDLGGGTFDISIIEIDEVE
+GEKTFEVLATNGDTHLGGEDFDNRLINYLVDEFKKEQGIDLKTDPLAMQRVKEAAEKAKIELSFTSQTDV
+NLPYVTADATAPKHMNVKVTRAKLESLVEDLVQRSLEPLKVALADADLSVNDITDVILVGGQTRMPMVQA
+KVAEFFGKEARRDVNPDEAVAMGAAVQGGVLAGDVKDVLLLDVTPLSLGIETMGGVMTKLVEKNTTIPTK
+ANQVFSTAEDNQSAVTIHVLQGERKQAMYNKSLGQFNLEGIQPAPRGMPQIEVTFDLDADGILHVSAKDK
+QTGKEQKITIQASGGLSDDEIEKMVQEAEANKEADKKFEELATARNQADQMIHGTRKQVEEAGDALPAED
+KEKIEAAVSELEDARKGDDKEAIDAKVQALMTASQKLMEIAQQQAQAQAAQGGDEAAQSKDDDVVDAEFE
+EVKDDKK";
+
+print "The protein sequence (UNIPROT ID: AAF27648.1)is\n$protein\n"; 
+
+#length
+$len=length $protein; 
+print "Length of amino acid is : $len\n";
+print "acidic residues basic residues\n";
+$count_D=0;
+$count_E=0;
+$count_K=0;
+$count_H=0;
+$count_R=0; 
+
+@protein=split("",$protein);
+for($i=0;$i<+$len;$i++)
+{
+if (@protein[$i] eq 'D')
+{ $count_D++; }
+if (@protein[$i] eq 'E')
+{ $count_E++; }
+if (@protein[$i] eq 'K')
+{ $count_K++; }
+if (@protein[$i] eq 'H')
+{ $count_H++; }
+if (@protein[$i] eq 'R')
+{ $count_R++; }
+}
+
+print"Asp:$count_D\n"; 
+print"Glu $count_E\n"; 
+print"Lys:$count_K\n"; 
+print"His:$count_H\n"; 
+print"Arg:$count_R\n"; 
+$aci=$count_D+$count_E; 
+print"Total number of acidic residues :$aci\n";
+$bas=$count_K+$count_H+$count_R; 
+print"Total number of basic residues :$bas\n";
+$acid=$aci/$len*100;
+print "The percentage of acidic residues is $acid\n";
+$base=$bas/$len*100;
+print "The percentage of basic residues is $base\n";
