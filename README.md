@@ -1,3 +1,4 @@
-# Examples-of-Perl_Programming
-
-This repository contains few basic codes to execute using Perl. 
+#Coursework - MSc Bioinformatics 
+Module : Perl Programming
+Batch: 2019-21 
+Pondicherry University
