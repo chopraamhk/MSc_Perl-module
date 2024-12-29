@@ -1,4 +1,6 @@
 #Coursework - MSc Bioinformatics 
-Module : Perl Programming
+```
+Module: Perl Programming
 Batch: 2019-21 
-Pondicherry University
+Centre for Bioinformatics, Pondicherry University
+```
